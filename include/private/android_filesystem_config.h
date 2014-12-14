@@ -202,6 +202,10 @@ static const struct android_id_info android_ids[] = {
     { "rfs",           AID_RFS, },
     { "rfs_shared",    AID_RFS_SHARED, },
 #endif
+#ifdef MTK_G_MT6589
+    { "ccci", AID_CCCI, },
+    { "nvram", AID_NVRAM, },
+#endif
     { "everybody",     AID_EVERYBODY, },
     { "misc",          AID_MISC, },
     { "nobody",        AID_NOBODY, },
