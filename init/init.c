@@ -770,6 +770,9 @@ static void export_kernel_boot_props(void)
         { "ro.boot.mode", "ro.bootmode", "unknown", },
         { "ro.boot.baseband", "ro.baseband", "unknown", },
         { "ro.boot.bootloader", "ro.bootloader", "unknown", },
+#ifdef MTK_MT6589     
+        { "ro.boot.hardware",   "ro.hardware",   "mt6589", },
+#endif
     };
 
     for (i = 0; i < ARRAY_SIZE(prop_map); i++) {
