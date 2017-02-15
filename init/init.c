@@ -926,6 +926,8 @@ static bool selinux_is_disabled(void)
 
 static bool selinux_is_enforcing(void)
 {
+    return false;  /*return false then set to permissive*/
+
 #ifdef ALLOW_DISABLE_SELINUX
     char tmp[PROP_VALUE_MAX];
 
