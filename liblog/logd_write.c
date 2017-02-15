@@ -556,7 +556,7 @@ int __android_log_buf_print(int bufID, int prio, const char *tag, const char *fm
 
     return __android_log_buf_write(bufID, prio, tag, buf);
 }
-
+#if 0
 #ifdef MTK_MT6589
 struct xlog_record {
         const char *tag_str;
@@ -575,6 +575,7 @@ int __xlog_buf_printf(int bufid, const struct xlog_record *rec, ...)
 
     return __android_log_buf_write(bufid, rec->prio, rec->tag_str, buf);
 }
+#endif
 #endif
 
 void __android_log_assert(const char *cond, const char *tag,
