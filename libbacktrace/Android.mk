@@ -68,9 +68,6 @@ libbacktrace_shared_libraries_host := \
 libbacktrace_static_libraries_host := \
 	libcutils \
 
-libbacktrace_ldlibs_host := \
-	-lpthread \
-	-lrt \
 else
 libbacktrace_src_files += \
 	Corkscrew.cpp \
@@ -86,6 +83,10 @@ libbacktrace_shared_libraries_target += \
 
 libbacktrace_ldlibs_host := \
 	-ldl \
+
+libbacktrace_ldlibs_host += \
+	-lpthread \
+	-lrt \
 
 endif
 
