@@ -48,10 +48,8 @@ public:
 
   inline void Lock() {
     pthread_mutex_lock(&mutex_);
-
-    // Always reset the wait value since this could be the first or nth
-    // time this entry is locked.
-    wait_value_ = 0;
+    // Reset the futex value in case of multiple unwinds of the same thread.
+    futex_ = 0;
   }
 
   inline void Unlock() {
@@ -68,11 +66,9 @@ private:
 
   pid_t pid_;
   pid_t tid_;
+  int futex_;
   int ref_count_;
   pthread_mutex_t mutex_;
-  pthread_mutex_t wait_mutex_;
-  pthread_cond_t wait_cond_;
-  int wait_value_;
   ThreadEntry* next_;
   ThreadEntry* prev_;
   ucontext_t ucontext_;

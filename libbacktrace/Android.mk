@@ -84,10 +84,6 @@ libbacktrace_shared_libraries_target += \
 libbacktrace_ldlibs_host := \
 	-ldl \
 
-libbacktrace_ldlibs_host += \
-	-lpthread \
-	-lrt \
-
 endif
 
 module := libbacktrace
@@ -130,10 +126,6 @@ libbacktrace_libc++_shared_libraries_host := \
 
 libbacktrace_libc++_static_libraries_host := \
 	libcutils \
-
-libbacktrace_libc++_ldlibs_host := \
-	-lpthread \
-	-lrt \
 
 libbacktrace_libc++_libc++ := true
 
